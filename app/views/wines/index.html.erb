@@ -1,0 +1,6 @@
+<h1>Wines<h1>
+	<ol>
+		<% @wines.each do |wine| %>
+		<li><%= link_to(wine.name, wine) %>, <%= wine.varietal %> by <%= wine.winery %></li>
+		<% end %>
+	</ol>
