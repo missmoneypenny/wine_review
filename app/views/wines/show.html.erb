@@ -7,4 +7,8 @@
 	<p><label>Country:</label><%= @wine.country %></p>
 	<p><label>Varietal:</label><%= @wine.varietal %></p>
 </article>
-<%= link_to 'All Wines', wines_path %>
+<%= link_to 'All Wines', wines_path %> 
+| <%= link_to 'Edit', edit_wine_path(@wine) %>
+<%= button_to 'Delete', @wine,
+method: :delete,
+data: {confirm: 'Are you sure?'} %>
