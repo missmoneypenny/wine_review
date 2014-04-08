@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-	before_action :set_wine, only: [:name, :year, :winery, :country, :varietal]
+	before_action :set_wine, only: [:show, :edit, :update, :destroy]
 	def index
 		@wines = Wine.all
 	end
