@@ -1,12 +1,12 @@
 <%= form_for(@wine) do |f| %>
 <%= render 'shared/validation_errors', object: @wine %>
-<%= f.lable :name %> <%= f.text_field :name, autofocus: true %> <br />
-<%= f.lable :year %> <%= f.text_field :year %> <br />
-<%= f.lable :winery %> <%= f.text_field :winery %> <br />
-<%= f.lable :country %> <%= f.text_field :country %> <br />
+<%= f.label :name %> <%= f.text_field :name, autofocus: true %> <br />
+<%= f.label :year %> <%= f.text_field :year %> <br />
+<%= f.label :winery %> <%= f.text_field :winery %> <br />
+<%= f.label :country %> <%= f.text_field :country %> <br />
 <%= f.select :varietal, Wine::VARIETALS, {prompt: "Pick one"} %> <br />
 <p>
-	<%= f.sumbit %>
+	<%= f.submit %>
 	<%= link_to 'Cancel', wines_path %>
 </p>
 <% end %>
