@@ -2,7 +2,12 @@
 	<%= page_entries_info @wines %>
 	<ol>
 		<% @wines.each do |wine| %>
-		<li><%= link_to(wine.name, wine) %>, <%= wine.varietal %> by <%= wine.winery %></li>
+		<li><%= link_to(wine.name, wine) %>, <%= wine.varietal %> by <%= wine.winery %> <br/>
+			<%= format_average_rating(wine) %>
+			<% if wine.rating.any? %>
+			(out of <%= pluralize(wine.rating.size, 'rating') %>)
+			<% end %>
+			</li>
 		<% end %>
 	</ol>
 	<%= paginate @wines %>

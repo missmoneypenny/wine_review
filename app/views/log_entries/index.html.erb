@@ -1,0 +1,23 @@
+
+<header>Log Entry for <%= link_to(@wine.name, @wine) %></header>
+<ol id="log_entries">
+  <% @log_entries.each do |log_entry| %>
+    <li>
+      <span class="name">by <%= log_entry.name %> </span>
+      <span class="rating"><%= pluralize(log_entry.rating, 'rating') %></span>
+      <span class="tasted_on">
+        <%= time_ago_in_words(log_entry.tasted_on) %> ago
+      </span>
+      <span class="location"><%= log_entry.location %> </span>
+      <p>
+        &quot;<%= log_entry.comment %>&quot;
+      </p>
+    </li>
+  <% end %>
+</ol>
+<%= link_to 'Write a Log Entry', new_wine_log_entry_path(@wine),
+        remote: true,
+        data: { 'update-target' => 'log_entry_form_container' },
+        class: 'btn btn-primary' %>
+
+<div id="log_entry_form_container"></div>

@@ -1,7 +1,7 @@
 class WinesController < ApplicationController
 	before_action :set_wine, only: [:show, :edit, :update, :destroy]
 	def index
-		@wines = Wine.order(:name).page(params[:page])
+		@wines = Wine.includes(:log_entries).order(:name).page(params[:page])
 	end
 	def show
 	end

@@ -38,6 +38,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 # Kaminari-bootstrap 3.0.1
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
+
+gem 'powerpack'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
