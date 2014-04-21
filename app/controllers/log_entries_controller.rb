@@ -21,7 +21,7 @@ class LogEntriesController < ApplicationController
 	private
 
 	def set_wine
-	@wine = Wind.find(params[:wine_id])	
+	@wine = Wine.find(params[:wine_id])	
 	end
 
 	def log_entry_params
