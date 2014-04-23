@@ -19,9 +19,12 @@ ActiveRecord::Schema.define(version: 20140420111806) do
     t.string   "location"
     t.string   "comments"
     t.datetime "tasted_on"
+    t.integer  "wine_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "log_entries", ["wine_id"], name: "index_log_entries_on_wine_id"
 
   create_table "wines", force: true do |t|
     t.string   "name"
